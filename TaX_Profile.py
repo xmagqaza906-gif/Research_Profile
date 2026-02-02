@@ -3,17 +3,12 @@
 import streamlit as st
 import pandas as pd
 
-# -------------------------------------------------
-# Page Configuration
-# -------------------------------------------------
 st.set_page_config(
     page_title="Research Profile",
     layout="wide"
 )
 
-# -------------------------------------------------
-# Custom Styling
-# -------------------------------------------------
+
 st.markdown("""
 <style>
 
@@ -39,18 +34,13 @@ img {
 </style>
 """, unsafe_allow_html=True)
 
-# -------------------------------------------------
-# Sidebar Navigation
-# -------------------------------------------------
+
 st.sidebar.title("Navigation")
 menu = st.sidebar.radio(
     "Go to:",
     ["Research Profile", "Publications", "Projects", "Contact"]
 )
 
-# -------------------------------------------------
-# Research Profile Section
-# -------------------------------------------------
 if menu == "Research Profile":
 
     st.markdown('<div class="profile-container">', unsafe_allow_html=True)
@@ -104,9 +94,6 @@ if menu == "Research Profile":
         use_container_width=True
     )
 
-# -------------------------------------------------
-# Publications Section
-# -------------------------------------------------
 elif menu == "Publications":
 
     st.title("Publications")
@@ -137,9 +124,6 @@ elif menu == "Publications":
             year_counts = publications["Year"].value_counts().sort_index()
             st.bar_chart(year_counts)
 
-# -------------------------------------------------
-# Projects Section
-# -------------------------------------------------
 elif menu == "Projects":
 
     st.title("Research Projects")
@@ -172,9 +156,6 @@ elif menu == "Projects":
     st.subheader("Weather Data Modeling")
     st.write("Temperature and humidity data analysis.")
 
-# -------------------------------------------------
-# Contact Section
-# -------------------------------------------------
 elif menu == "Contact":
 
     st.title("Please get in touch")
@@ -183,3 +164,4 @@ elif menu == "Contact":
     📧 **Email:** xmagqaza906@gmail.com  
     📱 **Phone:** 0790488317  
     """)
+
